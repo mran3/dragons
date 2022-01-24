@@ -20,9 +20,9 @@ class ListFlightsViewController: UIViewController, UITableViewDataSource, UITabl
     private var valueToPass: String?
     private var lastLatitude: Double?
     private var lastLongitude: Double?
-    private var flights:[Flight] = []
+    private var flights: [Flight] = []
     private var presenter = ListFlightsPresenter()
-    private let heightRow = 44
+    private let heightRow:CGFloat = 50.0
     private var sections: [RouteSection] = []
     
     override func viewDidLoad() {
@@ -47,7 +47,6 @@ class ListFlightsViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.85)
         view.addSubview(tableView)
         view.addSubview(activityIndicator)
-        
         
         // Table view constraints
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -111,20 +110,14 @@ class ListFlightsViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(heightRow)
+        return self.heightRow
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        valueToPass = self.flights[indexPath.row].outbound.destination
-        let message = """
-        If you hire me, you will get the chance to see some beautiful, handcrafted detail views I will create for Odigeo...
-        We can even include dragons if you want! 🐉🐉🐉
-        """
-        
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let buttonAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        alertController.addAction(buttonAction)
-        present(alertController, animated: true, completion: nil)
+        let section = self.sections[indexPath.section]
+        let flight = section.flights[indexPath.row]
+        let vc = RideDetailViewController(flight: flight)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func flightsLoaded(flights: [Flight]) {
@@ -132,7 +125,7 @@ class ListFlightsViewController: UIViewController, UITableViewDataSource, UITabl
         let groups = Dictionary(grouping: flights) { (flight) -> String in
             return flight.outbound.destination
         }
-        self.sections = groups.map (RouteSection.init(route: flights:))
+        self.sections = groups.map(RouteSection.init(route: flights:))
         self.hideIndicator()
         DispatchQueue.main.async {
             self.tableView.reloadData()

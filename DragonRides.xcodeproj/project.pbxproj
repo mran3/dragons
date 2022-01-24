@@ -10,6 +10,9 @@
 		0C5F0B9424C3C44800729627 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F0B9324C3C44800729627 /* APIConfig.swift */; };
 		0CBFA59024BC64C20077E332 /* ListFlightsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBFA58F24BC64C20077E332 /* ListFlightsPresenter.swift */; };
 		8605EE16269FF0EF00724E70 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8605EE15269FF0EF00724E70 /* Environment.swift */; };
+		86350F56278BF209007800B9 /* RideDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86350F55278BF208007800B9 /* RideDetailViewController.swift */; };
+		86350F59278C0790007800B9 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86350F58278C0790007800B9 /* UIViewController+Alert.swift */; };
+		86350F5C278CBAFC007800B9 /* TitleInfoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86350F5B278CBAFC007800B9 /* TitleInfoTableCell.swift */; };
 		8A12C0D8246ED95C00316518 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A12C0D7246ED95C00316518 /* JSONParser.swift */; };
 		8A151A452465D7B4000FBA74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A151A442465D7B4000FBA74 /* Assets.xcassets */; };
 		8A1BCBFD245F67C300AB1E0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1BCBFC245F67C300AB1E0B /* AppDelegate.swift */; };
@@ -26,6 +29,9 @@
 		0C5F0B9324C3C44800729627 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		0CBFA58F24BC64C20077E332 /* ListFlightsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFlightsPresenter.swift; sourceTree = "<group>"; };
 		8605EE15269FF0EF00724E70 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		86350F55278BF208007800B9 /* RideDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDetailViewController.swift; sourceTree = "<group>"; };
+		86350F58278C0790007800B9 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		86350F5B278CBAFC007800B9 /* TitleInfoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleInfoTableCell.swift; sourceTree = "<group>"; };
 		8A12C0D7246ED95C00316518 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		8A151A442465D7B4000FBA74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A1BCBF9245F67C300AB1E0B /* Dragon Riders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dragon Riders.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +67,7 @@
 		0CBFA58A24BC64510077E332 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				86350F55278BF208007800B9 /* RideDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -105,9 +112,26 @@
 			path = RideDetail;
 			sourceTree = "<group>";
 		};
+		86350F57278BF256007800B9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				86350F58278C0790007800B9 /* UIViewController+Alert.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		86350F5A278CBAD3007800B9 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				86350F5B278CBAFC007800B9 /* TitleInfoTableCell.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		8A12C0C5246EB61C00316518 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				86350F5A278CBAD3007800B9 /* CustomViews */,
 				8A1BCC07245F67C400AB1E0B /* LaunchScreen.storyboard */,
 				8A12C0C7246EB6C300316518 /* RideDetail */,
 				8A12C0C6246EB6B800316518 /* ListRides */,
@@ -168,6 +192,7 @@
 		8A1BCBFB245F67C300AB1E0B /* Dragon */ = {
 			isa = PBXGroup;
 			children = (
+				86350F57278BF256007800B9 /* Extensions */,
 				0C3CB37F24C4C49B008EB4FB /* Info.plist */,
 				8605EDED269F4C3800724E70 /* Models */,
 				8A12C0C5246EB61C00316518 /* Views */,
@@ -266,11 +291,14 @@
 				D17582B727512CFB00AEF73F /* FlightModel.swift in Sources */,
 				8A1BCBFD245F67C300AB1E0B /* AppDelegate.swift in Sources */,
 				8A1BCBFF245F67C300AB1E0B /* SceneDelegate.swift in Sources */,
+				86350F59278C0790007800B9 /* UIViewController+Alert.swift in Sources */,
 				8A317F0D24631ADE009E2B23 /* ListFlightsViewController.swift in Sources */,
+				86350F5C278CBAFC007800B9 /* TitleInfoTableCell.swift in Sources */,
 				8A12C0D8246ED95C00316518 /* JSONParser.swift in Sources */,
 				0C5F0B9424C3C44800729627 /* APIConfig.swift in Sources */,
 				D18F12D1274E9725002A2E52 /* FlightsService.swift in Sources */,
 				8605EE16269FF0EF00724E70 /* Environment.swift in Sources */,
+				86350F56278BF209007800B9 /* RideDetailViewController.swift in Sources */,
 				D17583822751A9A300AEF73F /* CurrencyService.swift in Sources */,
 				0CBFA59024BC64C20077E332 /* ListFlightsPresenter.swift in Sources */,
 			);
