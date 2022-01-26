@@ -21,41 +21,14 @@ typealias FetchResult<T> = (Result<T, Error>) -> Void
 class JSONParser {
     
     let imageCache = NSCache<NSString, UIImage>()
+    private let session: URLSessionProtocol
     
-    func fetchData<T: Decodable>(of type: T.Type, from url: URL, completion: @escaping result<T>) {
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let error = error {
-                completion(.failure(error))
-            }
-            
-            guard let response = response as? HTTPURLResponse else {
-                completion(.failure(DataError.invalidResponse))
-                return
-            }
-            
-            if 200...299 ~= response.statusCode {
-                if let data = data {
-                    do {
-                        let jsonDecoder = JSONDecoder()
-                        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-                        let decodedData: [T] = try jsonDecoder.decode([T].self, from: data)
-                        completion(.success(decodedData))
-                    } catch {
-                        completion(.failure(DataError.decodingError))
-                    }
-                } else {
-                    completion(.failure(DataError.invalidData))
-                }
-                
-            } else {
-                completion(.failure(DataError.serverError))
-            }
-        }.resume()
+    init(session: URLSessionProtocol = URLSession.shared) {
+        self.session = session
     }
     
-    
     func fetchJSON<T: Decodable>(of type: T.Type, from url: URL, completion: @escaping FetchResult<T>) {
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
+        self.session.dataTaskWithUrl(with: url) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
             }
@@ -93,8 +66,7 @@ class JSONParser {
         return self.fetchImage(from: url, completion: completion)
     }
     
-    func fetchImage(from url:URL, completion: @escaping (_ image: UIImage?, _ error: Error?) -> ()) {          
-        
+    func fetchImage(from url:URL, completion: @escaping (_ image: UIImage?, _ error: Error?) -> ()) {
         if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) {
             completion(cachedImage, nil)
             
