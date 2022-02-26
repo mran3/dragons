@@ -16,7 +16,9 @@ enum DataError: Error {
 }
 
 typealias result<T> = (Result<[T], Error>) -> Void
-typealias FetchResult<T> = (Result<T, Error>) -> Void
+typealias FetchResultCallback<T> = (Result<T, Error>) -> Void
+typealias FetchResult<T> = Result<T, Error>
+
 
 class JSONParser {
     
@@ -27,7 +29,7 @@ class JSONParser {
         self.session = session
     }
     
-    func fetchJSON<T: Decodable>(of type: T.Type, from url: URL, completion: @escaping FetchResult<T>) {
+    func fetchJSON<T: Decodable>(of type: T.Type, from url: URL, completion: @escaping FetchResultCallback<T>) {
         self.session.dataTaskWithUrl(with: url) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
@@ -39,23 +41,39 @@ class JSONParser {
             }
             
             if 200...299 ~= response.statusCode {
-                if let data = data {
-                    do {
-                        let jsonDecoder = JSONDecoder()
-                        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-                        let decodedData:T = try jsonDecoder.decode(T.self, from: data)
-                        completion(.success(decodedData))
-                    } catch {    
-                        completion(.failure(DataError.decodingError))
-                    }
-                } else {
-                    completion(.failure(DataError.invalidData))
-                }
+//                if let data = data {
+//                    do {
+//                        let jsonDecoder = JSONDecoder()
+//                        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+//                        let decodedData:T = try jsonDecoder.decode(T.self, from: data)
+//                        completion(.success(decodedData))
+//                    } catch {
+//                        completion(.failure(DataError.decodingError))
+//                    }
+//                } else {
+//                    completion(.failure(DataError.invalidData))r
+//                }
+                self.decodeJson(data: data, completion: completion)
                 
             } else {
                 completion(.failure(DataError.serverError))
             }
         }.resume()
+    }
+    
+    func decodeJson<T: Decodable>(data: Data?, completion: @escaping FetchResultCallback<T>) {
+        if let data = data {
+            do {
+                let jsonDecoder = JSONDecoder()
+                jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+                let decodedData:T = try jsonDecoder.decode(T.self, from: data)
+                completion(.success(decodedData))
+            } catch {
+                completion(.failure(DataError.decodingError))
+            }
+        } else {
+            completion(.failure(DataError.invalidData))
+        }
     }
     
     func fetchImage(from urlString: String, completion: @escaping (_ image: UIImage?, _ error: Error?) -> ()) {

@@ -1,0 +1,52 @@
+{
+    "results": [
+        {
+            "inbound": {
+                "airline": "Viserion",
+                "airlineImage": "http://dragonimages.net/images/gallery/dragon-images-by-unknown-250.jpg",
+                "arrivalDate": "8/9/2994",
+                "arrivalTime": "17:24",
+                "departureDate": "7/10/2993",
+                "departureTime": "4:57",
+                "destination": "Lannisport",
+                "origin": "Lorath"
+            },
+            "outbound": {
+                "airline": "Vhagar",
+                "airlineImage": "http://dragonimages.net/images/gallery/dragon-images-by-unknown-244.jpg",
+                "arrivalDate": "1/15/3052",
+                "arrivalTime": "23:31",
+                "departureDate": "11/10/3049",
+                "departureTime": "9:26",
+                "destination": "Lorath",
+                "origin": "Lannisport"
+            },
+            "price": 7857.72,
+            "currency": "GBP"
+        },
+        {
+            "inbound": {
+                "airline": "Archonei",
+                "airlineImage": "http://dragonimages.net/images/gallery/dragon-images-by-unknown-222.jpg",
+                "arrivalDate": "5/8/2596",
+                "arrivalTime": "19:51",
+                "departureDate": "1/4/2592",
+                "departureTime": "13:58",
+                "destination": "Tyrosh",
+                "origin": "Gulltown"
+            },
+            "outbound": {
+                "airline": "Rhaegal",
+                "airlineImage": "http://dragonimages.net/images/gallery/dragon-images-by-unknown-252.jpg",
+                "arrivalDate": "4/6/2693",
+                "arrivalTime": "20:20",
+                "departureDate": "5/13/2684",
+                "departureTime": "3:31",
+                "destination": "Gulltown",
+                "origin": "Tyrosh"
+            },
+            "price": 6236.57,
+            "currency": "JPY"
+        }        
+    ]
+}

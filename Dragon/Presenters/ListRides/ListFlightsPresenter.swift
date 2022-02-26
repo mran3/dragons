@@ -8,14 +8,17 @@
 import Foundation
 
 // I use protocols so Unit testing can be done easily using Mock objects.
-protocol ListFlightsView: AnyObject {
-    func flightsLoaded(flights: [Flight])
+protocol ListFlightsPresenterProtocol: AnyObject {
+    var listFlightsView: ListFlightsView? { get }
+    func attachView(_ viewController: ListFlightsView)
+    func detachView(_ viewController: ListFlightsView)
+    func getFlights()
 }
 
-class ListFlightsPresenter {
-    weak private var listFlightsView: ListFlightsView?
-    private let jsonParser = JSONParser()
-    private var flightsService = FlightsService()
+class ListFlightsPresenter: ListFlightsPresenterProtocol {
+    weak var listFlightsView: ListFlightsView?
+    private var flightsService: FlightsServiceProtocol = FlightsService()
+    
     func attachView(_ viewController: ListFlightsView){
         self.listFlightsView = viewController
     }
@@ -24,7 +27,7 @@ class ListFlightsPresenter {
         self.listFlightsView = nil
     }
     func getFlights() {
-        flightsService.getFlights(type: FlightResponse.self) { [weak self] result in
+        flightsService.getFlights { [weak self] result in
             guard let self = self else {
                 print("No self reference found")
                 return
@@ -36,6 +39,7 @@ class ListFlightsPresenter {
                 } else {
                     print(error.localizedDescription)
                 }
+                self.listFlightsView?.presentErrorMsg(messageText: NSLocalizedString("api.error", comment: ""))
             case .success(let response):
                 var flights:[Flight] = response.flights
                 flights.sort {

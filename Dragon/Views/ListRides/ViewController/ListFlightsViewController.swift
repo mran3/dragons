@@ -8,21 +8,22 @@
 
 import UIKit
 
-struct RouteSection {
-    var route: String
-    var flights: [Flight]
+
+
+protocol ListFlightsView: AnyObject {
+    func flightsLoaded(flights: [Flight])
+    func presentErrorMsg(messageText: String)
 }
 
 class ListFlightsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ListFlightsView {
-    
-    private var tableView = UITableView()
+    private(set) var tableView = UITableView()
     private var activityIndicator = UIActivityIndicatorView()
     private var valueToPass: String?
     private var lastLatitude: Double?
     private var lastLongitude: Double?
-    private var flights: [Flight] = []
-    private var presenter = ListFlightsPresenter()
-    private let heightRow:CGFloat = 50.0
+    private(set) var flights: [Flight] = []
+    public var presenter: ListFlightsPresenterProtocol = ListFlightsPresenter()
+    private let heightRow: CGFloat = 50.0
     private var sections: [RouteSection] = []
     
     override func viewDidLoad() {
@@ -35,7 +36,7 @@ class ListFlightsViewController: UIViewController, UITableViewDataSource, UITabl
     
     // This is a simple view so decided to set the constraints here.
     // For bigger projects, one can extract this information in other
-    // function or even other files (for example using an extension).
+    // function or even other files.
     override func loadView() {
         super.loadView()
         self.title = "Dragon rides"
@@ -47,7 +48,10 @@ class ListFlightsViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.85)
         view.addSubview(tableView)
         view.addSubview(activityIndicator)
-        
+        setUpConstraints()
+    }
+    
+    func setUpConstraints(){
         // Table view constraints
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -64,10 +68,12 @@ class ListFlightsViewController: UIViewController, UITableViewDataSource, UITabl
     deinit {
         presenter.detachView(self)
     }
+    
     func requestInfo(){
         showIndicator()
         presenter.getFlights()
     }
+    
     func hideIndicator(){
         DispatchQueue.main.async {
             self.activityIndicator.isHidden = true
@@ -127,8 +133,11 @@ class ListFlightsViewController: UIViewController, UITableViewDataSource, UITabl
         }
         self.sections = groups.map(RouteSection.init(route: flights:))
         self.hideIndicator()
+
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
-    }
+
+        
+    }    
 }

@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  DragonRides
+
+  Created by Andres Acevedo on 19/02/22.
+  Copyright © 2022 Andrés A. All rights reserved.
+*/
+
+"api.error" = "Information could not be retrieved from the server.";

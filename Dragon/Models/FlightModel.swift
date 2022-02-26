@@ -40,6 +40,10 @@ struct flightsToaDestination{
     let destination:String
     let flights:[Flight]
 }
+struct RouteSection {
+    var route: String
+    var flights: [Flight]
+}
 struct Segment: Codable{
     let airline: String
     let airlineImage: String

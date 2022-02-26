@@ -8,13 +8,17 @@
 
 import Foundation
 
-class FlightsService {
+protocol FlightsServiceProtocol {
+    func getFlights(completion: @escaping FetchResultCallback<FlightResponse>)
+}
+
+class FlightsService: FlightsServiceProtocol {
     private let apiConfig2 = APIConfig2()
     private let jsonParser = JSONParser()
-    func getFlights<T: Decodable>(type: T.Type, completion: @escaping FetchResult<T>) {
+    func getFlights(completion: @escaping FetchResultCallback<FlightResponse>) {
         let jsonURL = apiConfig2.makeURL(with: .current)
         
-        jsonParser.fetchJSON(of: T.self, from: jsonURL!) { result in
+        jsonParser.fetchJSON(of: FlightResponse.self, from: jsonURL!) { result in
             completion(result)
         }
     }

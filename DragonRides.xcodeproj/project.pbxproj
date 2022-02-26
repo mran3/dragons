@@ -13,10 +13,17 @@
 		86350F56278BF209007800B9 /* RideDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86350F55278BF208007800B9 /* RideDetailViewController.swift */; };
 		86350F59278C0790007800B9 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86350F58278C0790007800B9 /* UIViewController+Alert.swift */; };
 		86350F5C278CBAFC007800B9 /* TitleInfoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86350F5B278CBAFC007800B9 /* TitleInfoTableCell.swift */; };
+		865D943527A1CE7D0078680D /* MockListFlightsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865D943427A1CE7D0078680D /* MockListFlightsPresenter.swift */; };
+		865D943A27A1D15F0078680D /* ListFlightsVC_UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865D943227A1A8BA0078680D /* ListFlightsVC_UnitTests.swift */; };
+		865D944127A34AC80078680D /* flights.json in Resources */ = {isa = PBXBuildFile; fileRef = 865D944027A34AC80078680D /* flights.json */; };
+		865D944327A34F020078680D /* MockFlightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865D944227A34F020078680D /* MockFlightService.swift */; };
+		8679EE6827C19781007E4B8E /* UIViewController+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8679EE6727C19781007E4B8E /* UIViewController+Utilities.swift */; };
+		8679EE6A27C1DD74007E4B8E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8679EE6927C1DD74007E4B8E /* Localizable.strings */; };
 		86A6101327A0B69C00A50368 /* URLSession+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AB609027A05F3E00052A38 /* URLSession+Protocol.swift */; };
 		86AB609127A05F3E00052A38 /* URLSession+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AB609027A05F3E00052A38 /* URLSession+Protocol.swift */; };
-		86AB609927A06F2800052A38 /* Dragon_Riders_UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AB609827A06F2800052A38 /* Dragon_Riders_UnitTests.swift */; };
+		86AB609927A06F2800052A38 /* JSONParser_UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AB609827A06F2800052A38 /* JSONParser_UnitTests.swift */; };
 		86AB60A227A0740700052A38 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AB60A027A06FD200052A38 /* MockURLSession.swift */; };
+		86D5322627B71A1400C9DC3C /* flights.json in Resources */ = {isa = PBXBuildFile; fileRef = 865D944027A34AC80078680D /* flights.json */; };
 		8A12C0D8246ED95C00316518 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A12C0D7246ED95C00316518 /* JSONParser.swift */; };
 		8A151A452465D7B4000FBA74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A151A442465D7B4000FBA74 /* Assets.xcassets */; };
 		8A1BCBFD245F67C300AB1E0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1BCBFC245F67C300AB1E0B /* AppDelegate.swift */; };
@@ -46,9 +53,17 @@
 		86350F55278BF208007800B9 /* RideDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDetailViewController.swift; sourceTree = "<group>"; };
 		86350F58278C0790007800B9 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		86350F5B278CBAFC007800B9 /* TitleInfoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleInfoTableCell.swift; sourceTree = "<group>"; };
+		865D943227A1A8BA0078680D /* ListFlightsVC_UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFlightsVC_UnitTests.swift; sourceTree = "<group>"; };
+		865D943427A1CE7D0078680D /* MockListFlightsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockListFlightsPresenter.swift; sourceTree = "<group>"; };
+		865D944027A34AC80078680D /* flights.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = flights.json; sourceTree = "<group>"; };
+		865D944227A34F020078680D /* MockFlightService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFlightService.swift; sourceTree = "<group>"; };
+		8679EE6727C19781007E4B8E /* UIViewController+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utilities.swift"; sourceTree = "<group>"; };
+		8679EE6927C1DD74007E4B8E /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Dragon/Resources/Localizable.strings; sourceTree = "<group>"; };
+		869C224027C9EFA40095B9AD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		869C224127C9EFA40095B9AD /* screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot.png; sourceTree = "<group>"; };
 		86AB609027A05F3E00052A38 /* URLSession+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Protocol.swift"; sourceTree = "<group>"; };
 		86AB609627A06F2800052A38 /* Dragon Riders UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dragon Riders UnitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		86AB609827A06F2800052A38 /* Dragon_Riders_UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dragon_Riders_UnitTests.swift; sourceTree = "<group>"; };
+		86AB609827A06F2800052A38 /* JSONParser_UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser_UnitTests.swift; sourceTree = "<group>"; };
 		86AB60A027A06FD200052A38 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		8A12C0D7246ED95C00316518 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		8A151A442465D7B4000FBA74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -154,10 +169,28 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
+		865D943F27A34AC80078680D /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				865D944027A34AC80078680D /* flights.json */,
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		8679EE6627C19744007E4B8E /* ViewExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				8679EE6727C19781007E4B8E /* UIViewController+Utilities.swift */,
+			);
+			path = ViewExtensions;
+			sourceTree = "<group>";
+		};
 		86AB609727A06F2800052A38 /* Dragon Riders UnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				86AB609827A06F2800052A38 /* Dragon_Riders_UnitTests.swift */,
+				86AB609F27A06F8200052A38 /* Mocks */,
+				86AB609827A06F2800052A38 /* JSONParser_UnitTests.swift */,
+				865D943227A1A8BA0078680D /* ListFlightsVC_UnitTests.swift */,
 			);
 			path = "Dragon Riders UnitTests";
 			sourceTree = "<group>";
@@ -165,7 +198,10 @@
 		86AB609F27A06F8200052A38 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				865D943F27A34AC80078680D /* APIs */,
 				86AB60A027A06FD200052A38 /* MockURLSession.swift */,
+				865D943427A1CE7D0078680D /* MockListFlightsPresenter.swift */,
+				865D944227A34F020078680D /* MockFlightService.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -173,6 +209,7 @@
 		8A12C0C5246EB61C00316518 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8679EE6627C19744007E4B8E /* ViewExtensions */,
 				86350F5A278CBAD3007800B9 /* CustomViews */,
 				8A1BCC07245F67C400AB1E0B /* LaunchScreen.storyboard */,
 				8A12C0C7246EB6C300316518 /* RideDetail */,
@@ -208,7 +245,6 @@
 		8A16F4AA2463108A00AD2521 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				0C5F0B9524C414E500729627 /* Services */,
 				8A12C0D7246ED95C00316518 /* JSONParser.swift */,
 				0C5F0B9324C3C44800729627 /* APIConfig.swift */,
 			);
@@ -218,6 +254,9 @@
 		8A1BCBF0245F67C300AB1E0B = {
 			isa = PBXGroup;
 			children = (
+				869C224027C9EFA40095B9AD /* README.md */,
+				869C224127C9EFA40095B9AD /* screenshot.png */,
+				8679EE6927C1DD74007E4B8E /* Localizable.strings */,
 				8A1BCBFB245F67C300AB1E0B /* Dragon */,
 				86AB609727A06F2800052A38 /* Dragon Riders UnitTests */,
 				8A1BCBFA245F67C300AB1E0B /* Products */,
@@ -236,13 +275,13 @@
 		8A1BCBFB245F67C300AB1E0B /* Dragon */ = {
 			isa = PBXGroup;
 			children = (
-				86AB609F27A06F8200052A38 /* Mocks */,
 				86350F57278BF256007800B9 /* Extensions */,
 				0C3CB37F24C4C49B008EB4FB /* Info.plist */,
 				8605EDED269F4C3800724E70 /* Models */,
 				8A12C0C5246EB61C00316518 /* Views */,
 				8605EDEC269F4C2E00724E70 /* Presenters */,
 				8A12C0CB246EB84100316518 /* Constants */,
+				0C5F0B9524C414E500729627 /* Services */,
 				8A16F4AA2463108A00AD2521 /* Networking */,
 				8A1BCC11245F685B00AB1E0B /* Resources */,
 			);
@@ -344,6 +383,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				865D944127A34AC80078680D /* flights.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +391,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86D5322627B71A1400C9DC3C /* flights.json in Resources */,
+				8679EE6A27C1DD74007E4B8E /* Localizable.strings in Resources */,
 				8A1BCC09245F67C400AB1E0B /* LaunchScreen.storyboard in Resources */,
 				8A151A452465D7B4000FBA74 /* Assets.xcassets in Resources */,
 			);
@@ -363,8 +405,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				865D943527A1CE7D0078680D /* MockListFlightsPresenter.swift in Sources */,
+				865D944327A34F020078680D /* MockFlightService.swift in Sources */,
+				865D943A27A1D15F0078680D /* ListFlightsVC_UnitTests.swift in Sources */,
 				86A6101327A0B69C00A50368 /* URLSession+Protocol.swift in Sources */,
-				86AB609927A06F2800052A38 /* Dragon_Riders_UnitTests.swift in Sources */,
+				86AB609927A06F2800052A38 /* JSONParser_UnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +431,7 @@
 				8605EE16269FF0EF00724E70 /* Environment.swift in Sources */,
 				86350F56278BF209007800B9 /* RideDetailViewController.swift in Sources */,
 				D17583822751A9A300AEF73F /* CurrencyService.swift in Sources */,
+				8679EE6827C19781007E4B8E /* UIViewController+Utilities.swift in Sources */,
 				0CBFA59024BC64C20077E332 /* ListFlightsPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
