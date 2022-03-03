@@ -14,12 +14,10 @@ class ListFlightsVCUnitTest: XCTestCase {
     var mockPresenter: MockFlightsPresenter!
     override func setUpWithError() throws {
         super.setUp()
-//        session = MockURLSession()
         subject = ListFlightsViewController()
         mockPresenter = MockFlightsPresenter()
         subject.presenter = mockPresenter
         subject.loadViewIfNeeded()
-//        subject.viewDidLoad()
     }
 
     override func tearDownWithError() throws {
@@ -40,14 +38,6 @@ class ListFlightsVCUnitTest: XCTestCase {
     // This test can helps us find unnecesary API requests.
     func testGetFlightsCalledOnceOnLoad() throws {
         XCTAssertEqual(mockPresenter.getFlightsTimesCalled, 1)
-    }
-    
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
     }
 
 }

@@ -19,6 +19,8 @@
 		865D944327A34F020078680D /* MockFlightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865D944227A34F020078680D /* MockFlightService.swift */; };
 		8679EE6827C19781007E4B8E /* UIViewController+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8679EE6727C19781007E4B8E /* UIViewController+Utilities.swift */; };
 		8679EE6A27C1DD74007E4B8E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8679EE6927C1DD74007E4B8E /* Localizable.strings */; };
+		869C224527CD89A20095B9AD /* ListFlightsPresenter_UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C224427CD89A20095B9AD /* ListFlightsPresenter_UnitTests.swift */; };
+		869C224727D08C250095B9AD /* MockListFlightsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C224627D08C250095B9AD /* MockListFlightsVC.swift */; };
 		86A6101327A0B69C00A50368 /* URLSession+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AB609027A05F3E00052A38 /* URLSession+Protocol.swift */; };
 		86AB609127A05F3E00052A38 /* URLSession+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AB609027A05F3E00052A38 /* URLSession+Protocol.swift */; };
 		86AB609927A06F2800052A38 /* JSONParser_UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AB609827A06F2800052A38 /* JSONParser_UnitTests.swift */; };
@@ -61,6 +63,8 @@
 		8679EE6927C1DD74007E4B8E /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Dragon/Resources/Localizable.strings; sourceTree = "<group>"; };
 		869C224027C9EFA40095B9AD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		869C224127C9EFA40095B9AD /* screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot.png; sourceTree = "<group>"; };
+		869C224427CD89A20095B9AD /* ListFlightsPresenter_UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFlightsPresenter_UnitTests.swift; sourceTree = "<group>"; };
+		869C224627D08C250095B9AD /* MockListFlightsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockListFlightsVC.swift; sourceTree = "<group>"; };
 		86AB609027A05F3E00052A38 /* URLSession+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Protocol.swift"; sourceTree = "<group>"; };
 		86AB609627A06F2800052A38 /* Dragon Riders UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dragon Riders UnitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86AB609827A06F2800052A38 /* JSONParser_UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser_UnitTests.swift; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 				86AB609F27A06F8200052A38 /* Mocks */,
 				86AB609827A06F2800052A38 /* JSONParser_UnitTests.swift */,
 				865D943227A1A8BA0078680D /* ListFlightsVC_UnitTests.swift */,
+				869C224427CD89A20095B9AD /* ListFlightsPresenter_UnitTests.swift */,
 			);
 			path = "Dragon Riders UnitTests";
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 				86AB60A027A06FD200052A38 /* MockURLSession.swift */,
 				865D943427A1CE7D0078680D /* MockListFlightsPresenter.swift */,
 				865D944227A34F020078680D /* MockFlightService.swift */,
+				869C224627D08C250095B9AD /* MockListFlightsVC.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -409,6 +415,8 @@
 				865D944327A34F020078680D /* MockFlightService.swift in Sources */,
 				865D943A27A1D15F0078680D /* ListFlightsVC_UnitTests.swift in Sources */,
 				86A6101327A0B69C00A50368 /* URLSession+Protocol.swift in Sources */,
+				869C224727D08C250095B9AD /* MockListFlightsVC.swift in Sources */,
+				869C224527CD89A20095B9AD /* ListFlightsPresenter_UnitTests.swift in Sources */,
 				86AB609927A06F2800052A38 /* JSONParser_UnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

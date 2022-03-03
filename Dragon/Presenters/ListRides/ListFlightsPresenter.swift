@@ -17,7 +17,7 @@ protocol ListFlightsPresenterProtocol: AnyObject {
 
 class ListFlightsPresenter: ListFlightsPresenterProtocol {
     weak var listFlightsView: ListFlightsView?
-    private var flightsService: FlightsServiceProtocol = FlightsService()
+    var flightsService: FlightsServiceProtocol = FlightsService()
     
     func attachView(_ viewController: ListFlightsView){
         self.listFlightsView = viewController
